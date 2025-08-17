@@ -772,8 +772,8 @@ const ArchitecturePortfolio = () => {
                   <div className="flex items-center space-x-6 animate-fadeIn animation-delay-200">
                     <div className="w-6 h-6 bg-blue-600 rounded hover:rotate-180 transition-transform duration-500 cursor-pointer"></div>
                     <div className="flex space-x-3 text-sm">
-                      <a href="#" className="text-stone-700 hover:text-black transition-colors duration-300 hover:scale-110">LinkedIn</a>
-                      <a href="#" className="text-stone-700 hover:text-black transition-colors duration-300 hover:scale-110">GitHub</a>
+                      <a href="https://www.linkedin.com/in/mdsaqlainkhan" className="text-stone-700 hover:text-black transition-colors duration-300 hover:scale-110">LinkedIn</a>
+                      <a href="https://github.com/starman011" className="text-stone-700 hover:text-black transition-colors duration-300 hover:scale-110">GitHub</a>
                       <a href="#" className="text-stone-700 hover:text-black transition-colors duration-300 hover:scale-110">Privacy</a>
                     </div>
                   </div>
