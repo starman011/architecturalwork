@@ -115,7 +115,7 @@ const Navigation = ({ isMenuOpen, setIsMenuOpen, scrollToSection }) => {
     <nav className={`fixed top-6 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-500 ${
       scrolled ? 'scale-95' : 'scale-100'
     }`}>
-      <div className="bg-black bg-opacity-40 backdrop-blur-xl border border-orange-100 border-opacity-30 rounded-full px-8 py-4 flex items-center space-x-8 shadow-lg">
+      <div className="bg-black bg-opacity-40 backdrop-blur-xl rounded-full px-8 py-4 flex items-center space-x-8 shadow-lg">
         {/* Logo/Brand with hover animation */}
         <div className="flex items-center space-x-3 group">
           <span className="text-orange-100 text-2xl font-semibold transition-all duration-300 group-hover:tracking-wider" 
@@ -568,7 +568,7 @@ const ArchitecturePortfolio = () => {
                 <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                   <div className="w-96 h-96 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-full blur-3xl animate-pulse"></div>
                 </div>
-                <h2 className="text-6xl md:text-7xl lg:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-orange-100 to-blue-400 mb-6 animate-slideUp relative z-10">
+                <h2 className="text-6xl md:text-7xl lg:text-8xl leading-[2] font-black text-transparent bg-clip-text bg-gradient-to-r from-orange-100 to-blue-400 mb-6 animate-slideUp relative z-10">
                   Projects
                 </h2>
                 <p className="text-xl md:text-2xl text-orange-100 opacity-80 max-w-3xl mx-auto leading-relaxed animate-slideUp animation-delay-200 relative z-10">
