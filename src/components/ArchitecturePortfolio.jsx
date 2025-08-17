@@ -568,7 +568,7 @@ const ArchitecturePortfolio = () => {
                 <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                   <div className="w-96 h-96 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-full blur-3xl animate-pulse"></div>
                 </div>
-                <h2 className="text-6xl md:text-7xl lg:text-8xl leading-[2] font-black text-transparent bg-clip-text bg-gradient-to-r from-orange-100 to-blue-400 mb-6 animate-slideUp relative z-10">
+                <h2 className="text-6xl md:text-7xl lg:text-8xl pb-3 font-black text-transparent bg-clip-text bg-gradient-to-r from-orange-100 to-blue-400 mb-6 animate-slideUp relative z-10">
                   Projects
                 </h2>
                 <p className="text-xl md:text-2xl text-orange-100 opacity-80 max-w-3xl mx-auto leading-relaxed animate-slideUp animation-delay-200 relative z-10">
