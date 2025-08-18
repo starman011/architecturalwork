@@ -404,7 +404,7 @@ const ArchitecturePortfolio = () => {
       category: "Digital Art",
       team: "One man Army",
       description: "This voronoi fracture skeleton is created by mesh extrusion using Grasshopper and Rhino and rendered on Cinema 4D. A stunning exploration of computational design that pushes the boundaries of traditional architectural visualization.",
-      image: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800&q=80",
+      image: "images/Project1.png",
       details: {
         area: "10 sq ft",
         floors: "none",
@@ -466,6 +466,42 @@ const ArchitecturePortfolio = () => {
         concept: "Vertical urbanism redefined through biophilic design principles, creating a self-sustaining community that enhances urban biodiversity.",
         materials: "Living facade systems, recycled steel structure, and bio-based composite materials demonstrate the future of sustainable construction."
       }
+    },
+    {
+      id: 4,
+      title: "URBAN OASIS",
+      subtitle: "Mixed-Use Development",
+      year: "2022",
+      location: "Singapore",
+      category: "Mixed-Use",
+      team: "24 Architects",
+      description: "A visionary mixed-use development that transforms urban density into a vertical garden. The project integrates residential, commercial, and recreational spaces within a sustainable ecosystem.",
+      image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80",
+      details: {
+        area: "200,000 sq ft",
+        floors: "35 floors",
+        sustainability: "First carbon-neutral mixed-use development in Southeast Asia, featuring integrated urban farming and rainwater harvesting systems.",
+        concept: "Vertical urbanism redefined through biophilic design principles, creating a self-sustaining community that enhances urban biodiversity.",
+        materials: "Living facade systems, recycled steel structure, and bio-based composite materials demonstrate the future of sustainable construction."
+      }
+    },
+    {
+      id: 4,
+      title: "URBAN OASIS",
+      subtitle: "Mixed-Use Development",
+      year: "2022",
+      location: "Singapore",
+      category: "Mixed-Use",
+      team: "24 Architects",
+      description: "A visionary mixed-use development that transforms urban density into a vertical garden. The project integrates residential, commercial, and recreational spaces within a sustainable ecosystem.",
+      image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80",
+      details: {
+        area: "200,000 sq ft",
+        floors: "35 floors",
+        sustainability: "First carbon-neutral mixed-use development in Southeast Asia, featuring integrated urban farming and rainwater harvesting systems.",
+        concept: "Vertical urbanism redefined through biophilic design principles, creating a self-sustaining community that enhances urban biodiversity.",
+        materials: "Living facade systems, recycled steel structure, and bio-based composite materials demonstrate the future of sustainable construction."
+      }
     }
   ];
 
@@ -481,9 +517,23 @@ const ArchitecturePortfolio = () => {
 
   const scrollToSection = (section) => {
     setIsMenuOpen(false);
-    const element = document.getElementById(section);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    
+    // If we're viewing a project detail, go back to main page first
+    if (selectedProject) {
+      setSelectedProject(null);
+      // Wait for the page to render, then scroll to section
+      setTimeout(() => {
+        const element = document.getElementById(section);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      // Normal scroll behavior when on main page
+      const element = document.getElementById(section);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
     }
   };
 
@@ -502,7 +552,7 @@ const ArchitecturePortfolio = () => {
               <h1 className="text-6xl md:text-8xl lg:text-9xl font-black mb-4 tracking-tight animate-slideUp">
                 {selectedProject.title}
               </h1>
-              <p className="text-2xl md:text-3xl lg:text-4xl font-light opacity-90 text-purple-400 animate-slideUp animation-delay-200">
+              <p className="text-2xl md:text-3xl lg:text-4xl font-light opacity-90 text-lime-400 animate-slideUp animation-delay-200">
                 {selectedProject.subtitle}
               </p>
             </div>
@@ -511,7 +561,7 @@ const ArchitecturePortfolio = () => {
         
         <button 
           onClick={goBack}
-          className="absolute top-16 left-16 flex items-center text-amber-100 hover:text-purple-400 transition-all duration-500 bg-black/50 px-6 py-3 backdrop-blur-xl font-medium rounded-2xl z-50 hover:scale-105 hover:bg-black/70 group"
+          className="absolute top-16 left-16 flex items-center text-amber-100 hover:text-lime-400 transition-all duration-500 bg-black/50 px-6 py-3 backdrop-blur-xl font-medium rounded-2xl z-50 hover:scale-105 hover:bg-black/70 group"
         >
           <ChevronLeft size={20} className="mr-2 transition-transform duration-300 group-hover:-translate-x-1" />
           Back to Projects
@@ -523,7 +573,7 @@ const ArchitecturePortfolio = () => {
           <div className="lg:col-span-2 space-y-12">
             <AnimatedCard className="bg-gradient-to-br from-stone-900/90 to-stone-800/90 backdrop-blur-xl p-8 md:p-12 rounded-3xl hover:shadow-2xl transition-all duration-700 border border-stone-700/50 hover:border-stone-600/50">
               <h2 className="text-4xl md:text-5xl font-black text-amber-100 mb-8 leading-tight">
-                PROJECT <span className="text-purple-400">OVERVIEW</span>
+                PROJECT <span className="text-lime-400">OVERVIEW</span>
               </h2>
               <p className="text-xl md:text-2xl text-stone-400 leading-relaxed mb-8 font-light">
                 {selectedProject.description}
@@ -535,7 +585,7 @@ const ArchitecturePortfolio = () => {
 
             <AnimatedCard delay={200} className="bg-gradient-to-br from-stone-900/90 to-stone-800/90 backdrop-blur-xl p-8 md:p-12 rounded-3xl hover:shadow-2xl transition-all duration-700 border border-stone-700/50 hover:border-stone-600/50">
               <h3 className="text-3xl md:text-4xl font-black text-amber-100 mb-8 leading-tight">
-                SUSTAINABILITY <span className="text-purple-400">APPROACH</span>
+                SUSTAINABILITY <span className="text-lime-400">APPROACH</span>
               </h3>
               <p className="text-lg text-stone-400 leading-relaxed">
                 {selectedProject.details.sustainability}
@@ -544,7 +594,7 @@ const ArchitecturePortfolio = () => {
 
             <AnimatedCard delay={400} className="bg-gradient-to-br from-stone-900/90 to-stone-800/90 backdrop-blur-xl p-8 md:p-12 rounded-3xl hover:shadow-2xl transition-all duration-700 border border-stone-700/50 hover:border-stone-600/50">
               <h3 className="text-3xl md:text-4xl font-black text-amber-100 mb-8 leading-tight">
-                MATERIALS & <span className="text-purple-400">CONSTRUCTION</span>
+                MATERIALS & <span className="text-lime-400">CONSTRUCTION</span>
               </h3>
               <p className="text-lg text-stone-400 leading-relaxed">
                 {selectedProject.details.materials}
@@ -714,65 +764,64 @@ const ArchitecturePortfolio = () => {
                   <div
                     key={project.id}
                     onClick={() => navigateToProject(project)}
-                    className="group min-w-72 max-w-80 bg-gradient-to-br from-black/80 to-black/90 backdrop-blur-xl cursor-pointer transition-all duration-700 hover:shadow-3xl relative overflow-hidden rounded-3xl hover:scale-110 animate-slideUp border border-lime-400/30 hover:border-lime-400/60"
+                    className="group min-w-72 max-w-80 bg-gradient-to-br from-black/80 to-black/90 backdrop-blur-xl cursor-pointer transition-all duration-300 hover:shadow-3xl relative overflow-hidden rounded-3xl hover:scale-105 animate-slideUp border border-lime-400/30 hover:border-lime-400/60"
                     style={{ animationDelay: `${index * 0.1}s` }}
                   >
-                    <div className="absolute inset-0 bg-gradient-to-br from-lime-100/5 via-transparent to-lime-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-lime-100/0 via-transparent to-lime-400/0 group-hover:from-lime-100/3 group-hover:to-lime-400/5 transition-all duration-300 pointer-events-none"></div>
                     
                     <div className="relative h-48 overflow-hidden rounded-t-3xl">
                       <img 
                         src={project.image} 
                         alt={project.title}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-90"
+                        className="w-full h-full object-cover transition-transform duration-300 opacity-90 group-hover:scale-103"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
                       <div className="absolute top-4 left-4">
-                        <span className="bg-black/70 backdrop-blur-xl text-black px-4 py-2 rounded-full text-xs font-bold tracking-wide group-hover:scale-110 group-hover:bg-lime-500/80 transition-all duration-500 border border-lime-400/30">
+                        <span className="bg-black/70 backdrop-blur-xl text-black px-4 py-2 rounded-full text-xs font-bold tracking-wide transition-all duration-300 border border-lime-400/30 group-hover:bg-lime-500/80">
                           {project.category}
                         </span>
                       </div>
                       
                       <div className="absolute top-4 right-4">
-                        <span className="bg-lime-500/70 backdrop-blur-xl text-black px-3 py-1 rounded-full text-xs font-bold opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-2 group-hover:translate-y-0">
+                        <span className="bg-lime-500/70 backdrop-blur-xl text-black px-3 py-1 rounded-full text-xs font-bold transition-all duration-300 transform translate-y-1 group-hover:translate-y-0 group-hover:opacity-100 opacity-0">
                           {project.year}
                         </span>
                       </div>
                     </div>
                     
                     <div className="p-6 relative">
-                      <h3 className="text-xl font-bold text-amber-100 mb-3 group-hover:text-amber-50 transition-colors duration-500">
+                      <h3 className="text-xl font-bold text-amber-100 mb-3 transition-colors duration-200 group-hover:text-amber-50">
                         {project.title}
                       </h3>
-                      <p className="text-stone-300 mb-4 opacity-90 text-sm font-medium group-hover:text-stone-200 transition-colors duration-300">
+                      <p className="text-stone-300 mb-4 opacity-90 text-sm font-medium transition-colors duration-200 group-hover:text-stone-200">
                         {project.subtitle}
                       </p>
                       
                       <div className="text-xs text-stone-300/80 mb-4">
-                        <div className="flex items-center group-hover:translate-x-1 transition-transform duration-500">
+                        <div className="flex items-center transition-transform duration-200 group-hover:translate-x-1">
                           <MapPin size={12} className="mr-2 text-lime-400" />
                           <span>{project.location}</span>
                         </div>
                       </div>
                       
-                      <p className="text-stone-300/90 leading-relaxed text-xs mb-6 group-hover:text-stone-200 transition-colors duration-300">
+                      <p className="text-stone-300/90 leading-relaxed text-xs mb-6 transition-colors duration-200 group-hover:text-stone-200">
                         {project.description.substring(0, 100)}...
                       </p>
 
                       <div className="flex items-center justify-between">
-                        <div className="flex items-center text-amber-100 text-sm font-bold group-hover:text-amber-50 transition-colors duration-300">
+                        <div className="flex items-center text-amber-100 text-sm font-bold transition-colors duration-200 group-hover:text-amber-50">
                           VIEW PROJECT
-                          <ArrowRight size={16} className="ml-2 group-hover:translate-x-2 transition-transform duration-500" />
+                          <ArrowRight size={16} className="ml-2 transition-transform duration-200 group-hover:translate-x-1" />
                         </div>
                         
-                        <div className="flex items-center space-x-1 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                        <div className="flex items-center space-x-1 transition-all duration-200 opacity-0 group-hover:opacity-100">
                           <Users size={12} className="text-lime-400" />
                           <span className="text-xs text-stone-300">{project.team}</span>
                         </div>
                       </div>
                     </div>
                     
-                    <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-lime-100/0 via-lime-500 to-lime-100/0 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-700"></div>
-                    <div className="absolute top-0 right-0 w-0 h-0 border-l-20 border-l-transparent border-t-20 border-t-lime-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-lime-100/0 via-lime-500 to-lime-100/0 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-400"></div>
                   </div>
                 ))}
               </div>
