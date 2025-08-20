@@ -1337,8 +1337,8 @@ const ArchitecturePortfolio = () => {
                     <ArrowRight size={16} className="sm:w-[18px] sm:h-[18px] group-hover:translate-x-1 transition-transform duration-300" />
                   </span>
                 </button>
-                <a 
-                  href="https://drive.google.com/uc?export=download&id=1MoEbsxfONEISAQPuawpK9fsxP9sSjRH_" 
+                <a
+                  href="https://drive.google.com/uc?export=download&id=1c8w9CJ1vj67w8pielfT18Q8QGaoVyyJh" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="bg-black/30 backdrop-blur-xl text-amber-100 px-6 sm:px-8 py-3 sm:py-4 rounded-full text-sm sm:text-base font-medium border-2 border-amber-100/30 hover:bg-black/50 hover:border-amber-100/50 transition-all duration-500 hover:scale-105 sm:hover:scale-110 hover:-rotate-1 animate-slideUp animation-delay-100 transform hover:-translate-y-1 hover:shadow-2xl group w-full sm:w-auto flex items-center justify-center space-x-2"
