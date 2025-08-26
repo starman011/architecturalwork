@@ -978,7 +978,7 @@ const ArchitecturePortfolio = () => {
       image: "/images/P6/7.1.jpg",
       gallery: [
         {
-          image: "/images/P6/7.1.jpg",
+          image: "/images/P6/7.1.png",
           caption: "Placeholder Image",
           description: "Just a placeholder image."
         },
@@ -996,6 +996,40 @@ const ArchitecturePortfolio = () => {
           "NIL.",
         concept:
           "Creating a secure and reliable communication and managment platform for defence project that uses advance networking and database techniques to make it secure and scalable.",
+        materials: "NIL"
+      }
+    },
+    {
+      id: 8,
+      title: "BIM 360/ACC Model Properties API: Compare Versions - Nodejs",
+      subtitle: "Model Comparison",
+      year: "2025",
+      location: "NIL",
+      category: "NodeJS",
+      team: "Software Engineers",
+      description:
+        "This demonstrates the use case of comparing two versions of a model by Model Properties API. The result is visualized as added, removed and updated items from the previous version. Change can be geometry as well as among properties.",
+      image: "/images/P7/8.1.png",
+      gallery: [
+        {
+          image: "/images/P7/8.1.png",
+          caption: "UI of Model Comparison",
+          description: "UI showing model difference and left hand side showcasing ACC project hierarchy."
+        },
+      ],
+      techInfo: {
+        techStack: "NodeJS, HTML, CSS, JS",
+        tools: "Web Application",
+        duration: "2 Weeks",
+        features: "Model Comparison, BIM360/ ACC File Hierarchy."
+      },
+      details: {
+        area: "NIL",
+        floors: "none",
+        sustainability:
+          "NIL.",
+        concept:
+          "A platform that shows the model difference and on the fly comparison on web without revit licence.",
         materials: "NIL"
       }
     }
